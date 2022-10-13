@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C932B70828F8842A00743BFA /* RealmDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932B70728F8842A00743BFA /* RealmDatabaseManager.swift */; };
+		C932B71128F8905900743BFA /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = C932B71028F8905900743BFA /* Realm */; };
+		C932B71328F8905900743BFA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C932B71228F8905900743BFA /* RealmSwift */; };
 		C95878AE28F5F4A900828983 /* WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95878AD28F5F4A900828983 /* WeatherApp.swift */; };
 		C95878B028F5F4A900828983 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95878AF28F5F4A900828983 /* WeatherView.swift */; };
 		C95878B228F5F4AC00828983 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95878B128F5F4AC00828983 /* Assets.xcassets */; };
@@ -20,9 +23,13 @@
 		C95878D028F5F99700828983 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95878CC28F5F99700828983 /* ImageView.swift */; };
 		C95878D128F5F99700828983 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95878CE28F5F99700828983 /* View+Extensions.swift */; };
 		C95878D428F5F9D800828983 /* NetworkProvider in Frameworks */ = {isa = PBXBuildFile; productRef = C95878D328F5F9D800828983 /* NetworkProvider */; };
+		C9E7807628F8C456007E97F8 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = C9E7807528F8C456007E97F8 /* Reachability */; };
+		C9E7807828F8C4AF007E97F8 /* RechabilityProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7807728F8C4AF007E97F8 /* RechabilityProviders.swift */; };
+		C9E7807A28F8CC9A007E97F8 /* Realm+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7807928F8CC9A007E97F8 /* Realm+Extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C932B70728F8842A00743BFA /* RealmDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseManager.swift; sourceTree = "<group>"; };
 		C95878AA28F5F4A900828983 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95878AD28F5F4A900828983 /* WeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApp.swift; sourceTree = "<group>"; };
 		C95878AF28F5F4A900828983 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
@@ -36,6 +43,8 @@
 		C95878CB28F5F99700828983 /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		C95878CC28F5F99700828983 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		C95878CE28F5F99700828983 /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		C9E7807728F8C4AF007E97F8 /* RechabilityProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechabilityProviders.swift; sourceTree = "<group>"; };
+		C9E7807928F8CC9A007E97F8 /* Realm+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+Extentions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +52,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C932B71328F8905900743BFA /* RealmSwift in Frameworks */,
+				C9E7807628F8C456007E97F8 /* Reachability in Frameworks */,
+				C932B71128F8905900743BFA /* Realm in Frameworks */,
 				C95878D428F5F9D800828983 /* NetworkProvider in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C932B70628F8841700743BFA /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C932B70728F8842A00743BFA /* RealmDatabaseManager.swift */,
+				C9E7807728F8C4AF007E97F8 /* RechabilityProviders.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		C95878A128F5F4A900828983 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +90,7 @@
 		C95878AC28F5F4A900828983 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				C932B70628F8841700743BFA /* Managers */,
 				C95878C928F5F99700828983 /* CoreKit */,
 				C95878BE28F5F95300828983 /* Models */,
 				C95878BB28F5F91800828983 /* WeatherView */,
@@ -127,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				C95878CA28F5F99700828983 /* Views */,
-				C95878CD28F5F99700828983 /* View+Extensions */,
+				C95878CD28F5F99700828983 /* Extensions */,
 			);
 			path = CoreKit;
 			sourceTree = "<group>";
@@ -141,12 +163,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		C95878CD28F5F99700828983 /* View+Extensions */ = {
+		C95878CD28F5F99700828983 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				C95878CE28F5F99700828983 /* View+Extensions.swift */,
+				C9E7807928F8CC9A007E97F8 /* Realm+Extentions.swift */,
 			);
-			path = "View+Extensions";
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +190,9 @@
 			name = Weather;
 			packageProductDependencies = (
 				C95878D328F5F9D800828983 /* NetworkProvider */,
+				C932B71028F8905900743BFA /* Realm */,
+				C932B71228F8905900743BFA /* RealmSwift */,
+				C9E7807528F8C456007E97F8 /* Reachability */,
 			);
 			productName = Weather;
 			productReference = C95878AA28F5F4A900828983 /* Weather.app */;
@@ -198,6 +224,8 @@
 			mainGroup = C95878A128F5F4A900828983;
 			packageReferences = (
 				C95878D228F5F9D800828983 /* XCRemoteSwiftPackageReference "NetworkProvider" */,
+				C932B70F28F8905900743BFA /* XCRemoteSwiftPackageReference "realm-swift" */,
+				C9E7807428F8C456007E97F8 /* XCRemoteSwiftPackageReference "Reachability" */,
 			);
 			productRefGroup = C95878AB28F5F4A900828983 /* Products */;
 			projectDirPath = "";
@@ -228,8 +256,11 @@
 				C95878C028F5F96A00828983 /* Weathers.swift in Sources */,
 				C95878B028F5F4A900828983 /* WeatherView.swift in Sources */,
 				C95878C528F5F98500828983 /* CommonServices.swift in Sources */,
+				C9E7807828F8C4AF007E97F8 /* RechabilityProviders.swift in Sources */,
 				C95878CF28F5F99700828983 /* Navigation.swift in Sources */,
 				C95878C428F5F98500828983 /* WeatherService.swift in Sources */,
+				C932B70828F8842A00743BFA /* RealmDatabaseManager.swift in Sources */,
+				C9E7807A28F8CC9A007E97F8 /* Realm+Extentions.swift in Sources */,
 				C95878BD28F5F94000828983 /* WeatherViewModel.swift in Sources */,
 				C95878D028F5F99700828983 /* ImageView.swift in Sources */,
 				C95878AE28F5F4A900828983 /* WeatherApp.swift in Sources */,
@@ -435,6 +466,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C932B70F28F8905900743BFA /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		C95878D228F5F9D800828983 /* XCRemoteSwiftPackageReference "NetworkProvider" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vishalkalola1/NetworkProvider.git";
@@ -443,13 +482,36 @@
 				kind = branch;
 			};
 		};
+		C9E7807428F8C456007E97F8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C932B71028F8905900743BFA /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C932B70F28F8905900743BFA /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		C932B71228F8905900743BFA /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C932B70F28F8905900743BFA /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		C95878D328F5F9D800828983 /* NetworkProvider */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C95878D228F5F9D800828983 /* XCRemoteSwiftPackageReference "NetworkProvider" */;
 			productName = NetworkProvider;
+		};
+		C9E7807528F8C456007E97F8 /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9E7807428F8C456007E97F8 /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

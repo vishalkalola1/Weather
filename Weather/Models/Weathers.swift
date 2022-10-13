@@ -6,13 +6,15 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Weathers: Codable {
-    let cod: String?
-    let message: Int?
-    let cnt: Int?
-    let dates: [DateList]?
-    let city: City?
+class Weathers: Object, Codable {
+    @Persisted (primaryKey: true) var id: String = UUID().uuidString
+    @Persisted var cod: String?
+    @Persisted var message: Int?
+    @Persisted var cnt: Int?
+    @Persisted var dates: List<DateList>
+    @Persisted var city: City?
     
     enum CodingKeys: String, CodingKey {
         case cod, message, cnt, city
@@ -21,15 +23,15 @@ struct Weathers: Codable {
 }
 
 // MARK: - City
-struct City: Codable {
-    let id: Int?
-    let name: String?
-    let coordinate: Coordinate?
-    let country: String?
-    let population: Int?
-    let timezone: Int?
-    let sunrise: Int?
-    let sunset: Int?
+class City: Object, Codable {
+    @Persisted var id: Int?
+    @Persisted var name: String?
+    @Persisted var coordinate: Coordinate?
+    @Persisted var country: String?
+    @Persisted var population: Int?
+    @Persisted var timezone: Int?
+    @Persisted var sunrise: Int?
+    @Persisted var sunset: Int?
     
     enum CodingKeys: String, CodingKey {
         case id, name, country, population, timezone, sunrise, sunset
@@ -38,9 +40,9 @@ struct City: Codable {
 }
 
 // MARK: - Coord
-struct Coordinate: Codable {
-    let lat: Double?
-    let long: Double?
+class Coordinate: Object, Codable {
+    @Persisted var lat: Double?
+    @Persisted var long: Double?
     
     enum CodingKeys: String, CodingKey {
         case lat
@@ -49,45 +51,40 @@ struct Coordinate: Codable {
 }
 
 // MARK: - List
-struct DateList: Codable {
-    let timestamp: Int?
-    let main: Main?
-    let weather: [Weather]?
-    let clouds: Clouds?
-    let wind: Wind?
-    let visibility: Int?
-    let pop: Double?
-    let sys: System?
-    let dt: String?
-    
-    var date: Date? {
-        guard let timestamp = timestamp else { return nil }
-        return Date(timeIntervalSince1970: Double(timestamp)).startOfDay
-    }
+class DateList: Object, Codable {
+    @Persisted var timestamp: Int?
+    @Persisted var main: Main?
+    @Persisted var weather: List<Weather>
+    @Persisted var clouds: Clouds?
+    @Persisted var wind: Wind?
+    @Persisted var visibility: Int?
+    @Persisted var pop: Double?
+    @Persisted var sys: System?
+    @Persisted var dt: String?
     
     enum CodingKeys: String, CodingKey {
         case main, weather, clouds, wind, visibility, pop, sys
         case timestamp = "dt"
-        case dt = "dtTxt"
+        case dt = "dt_txt"
     }
 }
 
 // MARK: - Clouds
-struct Clouds: Codable {
-    let all: Int?
+class Clouds: Object, Codable {
+    @Persisted var all: Int?
 }
 
 // MARK: - Main
-struct Main: Codable {
-    let temp: Double?
-    let feelsLike: Double?
-    let tempMin: Double?
-    let tempMax: Double?
-    let pressure: Int?
-    let seaLevel: Int?
-    let grndLevel: Int?
-    let humidity: Int?
-    let tempKf: Double?
+class Main: Object, Codable {
+    @Persisted var temp: Double?
+    @Persisted var feelsLike: Double?
+    @Persisted var tempMin: Double?
+    @Persisted var tempMax: Double?
+    @Persisted var pressure: Int?
+    @Persisted var seaLevel: Int?
+    @Persisted var grndLevel: Int?
+    @Persisted var humidity: Int?
+    @Persisted var tempKf: Double?
 
     enum CodingKeys: String, CodingKey {
         case temp
@@ -103,17 +100,17 @@ struct Main: Codable {
 }
 
 // MARK: - Sys
-struct System: Codable {
-    let pod: String?
+class System: Object, Codable {
+    @Persisted var pod: String?
 }
 
 // MARK: - Weather
-struct Weather: Codable {
-    let id: Int?
-    let main: String?
-    let details: String?
-    let icon: String?
-
+class Weather: Object, Codable {
+    @Persisted var id: Int?
+    @Persisted var main: String?
+    @Persisted var details: String?
+    @Persisted var icon: String?
+    
     enum CodingKeys: String, CodingKey {
         case id, main
         case details = "description"
@@ -122,15 +119,8 @@ struct Weather: Codable {
 }
 
 // MARK: - Wind
-struct Wind: Codable {
-    let speed: Double?
-    let deg: Int?
-    let gust: Double?
-}
-
-
-extension Date {
-    var startOfDay: Date {
-        return Calendar.current.startOfDay(for: self)
-    }
+class Wind: Object, Codable {
+    @Persisted var speed: Double?
+    @Persisted var deg: Int?
+    @Persisted var gust: Double?
 }

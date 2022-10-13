@@ -7,6 +7,7 @@
 
 import NetworkProvider
 import Foundation
+import RealmSwift
 
 protocol WeatherRepositoryProtocol {
     typealias WeatherResultHandler = (Result<Weathers?, Error>) -> Void
@@ -16,9 +17,15 @@ protocol WeatherRepositoryProtocol {
 struct WeatherRepository: WeatherRepositoryProtocol {
     
     private var networkProvider: NetworkProviderProtocol
+    private let databaseProviderProtocol: DatabaseProviderProtocol
+    private let rechabilityProvidersProtocol: RechabilityProvidersProtocol
     
-    init(networkProvider: NetworkProviderProtocol = NetworkProvider()) {
+    init(networkProvider: NetworkProviderProtocol = NetworkProvider(),
+         databaseProviderProtocol: DatabaseProviderProtocol = RealmDatabaseProvider(),
+         rechabilityProvidersProtocol: RechabilityProvidersProtocol = RechabilityProviders()) {
         self.networkProvider = networkProvider
+        self.databaseProviderProtocol = databaseProviderProtocol
+        self.rechabilityProvidersProtocol = rechabilityProvidersProtocol
     }
     
     func getWeatherReport(by city: String, completion: @escaping WeatherResultHandler) {
@@ -29,13 +36,29 @@ struct WeatherRepository: WeatherRepositoryProtocol {
 
 private extension WeatherRepository {
     func getWeatherReport(service: NetworkService, completion: @escaping WeatherResultHandler) {
-        networkProvider.request(dataType: Weathers.self, service: service, onQueue: .main) { results in
-            do {
-                let result = try results.get()
-                completion(.success(result))
-            } catch {
-                completion(.failure(error))
+        
+        let report = getWeatherReport()
+        if rechabilityProvidersProtocol.checkInternetAvailabel() && report == nil {
+            networkProvider.request(dataType: Weathers.self, service: service, onQueue: .main) { results in
+                do {
+                    let result = try results.get()
+                    try saveData(weathers: result)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(error))
+                }
             }
+        } else {
+            completion(.success(report))
         }
+    }
+    
+    func getWeatherReport() -> Weathers? {
+        databaseProviderProtocol.fetch(Weathers.self)
+    }
+    
+    func saveData(weathers: Weathers) throws {
+        try databaseProviderProtocol.create(weathers)
+        print("Data Stored")
     }
 }

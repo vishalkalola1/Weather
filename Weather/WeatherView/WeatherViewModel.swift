@@ -32,8 +32,8 @@ private extension WeatherViewModel {
         weatherRepository.getWeatherReport(by: city) { [weak self] results in
             guard let self = self else { return }
             do {
-                let results = try results.get()
-                self.dates = results?.dates ?? []
+                guard let results = try results.get() else { return }
+                self.dates = Array(results.dates)
             } catch {
                 self.error = error
             }
