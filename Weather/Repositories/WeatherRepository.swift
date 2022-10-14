@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 protocol WeatherRepositoryProtocol {
-    typealias WeatherResultHandler = (Result<Weathers?, Error>) -> Void
+    typealias WeatherResultHandler = (Result<Weathers, Error>) -> Void
     func getWeatherReport(by city: String, completion: @escaping WeatherResultHandler)
 }
 
@@ -36,7 +36,6 @@ struct WeatherRepository: WeatherRepositoryProtocol {
 
 private extension WeatherRepository {
     func getWeatherReport(service: NetworkService, completion: @escaping WeatherResultHandler) {
-        
         let report = getWeatherReport()
         if rechabilityProvidersProtocol.checkInternetAvailabel() && report == nil {
             networkProvider.request(dataType: Weathers.self, service: service, onQueue: .main) { results in
@@ -49,12 +48,16 @@ private extension WeatherRepository {
                 }
             }
         } else {
+            guard let report = report else {
+                completion(.failure(DatabaseError.nodata))
+                return
+            }
             completion(.success(report))
         }
     }
     
     func getWeatherReport() -> Weathers? {
-        databaseProviderProtocol.fetch(Weathers.self)
+        databaseProviderProtocol.fetch(Weathers.self) as? Weathers
     }
     
     func saveData(weathers: Weathers) throws {

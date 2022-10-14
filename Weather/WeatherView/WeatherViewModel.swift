@@ -9,18 +9,22 @@ import Foundation
 import Combine
 
 protocol WeatherViewModelProtocol: ObservableObject {
-    var dates: [DateList] { get }
+    var weatherReport: WeatherReport? { get }
+    var error: Error? { get }
 }
 
 final class WeatherViewModel: WeatherViewModelProtocol {
     
-    @Published var dates: [DateList] = []
+    @Published var weatherReport: WeatherReport? = nil
     @Published var error: Error?
     
     private let weatherRepository: WeatherRepositoryProtocol
+    private let weatherReportFactoryProtocol: WeatherReportFactoryProtocol
     
-    init(weatherRepository: WeatherRepositoryProtocol = WeatherRepository()) {
+    init(weatherRepository: WeatherRepositoryProtocol = WeatherRepository(),
+         weatherReportFactoryProtocol: WeatherReportFactoryProtocol = WeatherReportFactory()) {
         self.weatherRepository = weatherRepository
+        self.weatherReportFactoryProtocol = weatherReportFactoryProtocol
         fetchWeatherReports()
     }
 }
@@ -32,8 +36,9 @@ private extension WeatherViewModel {
         weatherRepository.getWeatherReport(by: city) { [weak self] results in
             guard let self = self else { return }
             do {
-                guard let results = try results.get() else { return }
-                self.dates = Array(results.dates)
+                let results = try results.get()
+                guard let city = results.city else { return }
+                self.weatherReport = self.weatherReportFactoryProtocol.genetateReport(city, dates: Array(results.dates))
             } catch {
                 self.error = error
             }

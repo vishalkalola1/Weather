@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WeatherView: View {
     
-    var viewModel = WeatherViewModel()
+    @StateObject var viewModel = WeatherViewModel()
     
     
     var body: some View {
@@ -17,7 +17,7 @@ struct WeatherView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text(viewModel.weatherReport?.city.name ?? "")
         }
         .padding()
     }

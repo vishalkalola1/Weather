@@ -9,8 +9,8 @@ import Foundation
 import RealmSwift
 
 protocol DatabaseProviderProtocol {
-    func create(_ object: Weathers) throws
-    func fetch(_ objectType: Weathers.Type) -> Weathers?
+    func create(_ object: Object) throws
+    func fetch(_ objectType: Object.Type) -> Object?
 }
 
 class RealmDatabaseProvider: DatabaseProviderProtocol {
@@ -21,12 +21,12 @@ class RealmDatabaseProvider: DatabaseProviderProtocol {
         self.realm = try! Realm()
     }
     
-    func create(_ object: Weathers) throws {
+    func create(_ object: Object) throws {
         try! realm.write { realm.add(object)}
     }
     
-    func fetch(_ objectType: Weathers.Type) -> Weathers? {
-        let obj = realm.objects(objectType).toArray(ofType: objectType.self).first
+    func fetch(_ objectType: Object.Type) -> Object? {
+        let obj = realm.objects(objectType).first
         return obj
     }
 }

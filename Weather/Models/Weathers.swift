@@ -67,6 +67,10 @@ class DateList: Object, Codable {
         case timestamp = "dt"
         case dt = "dt_txt"
     }
+    
+    var key: String {
+        dt?.components(separatedBy: " ").first ?? ""
+    }
 }
 
 // MARK: - Clouds
