@@ -12,12 +12,17 @@ struct ForcastListView: View {
     let forcasts: [Forcast]
     let selected: ([DateList]) -> Void
     
+    init(forcasts: [Forcast], selected: @escaping ([DateList]) -> Void) {
+        self.forcasts = forcasts
+        self.selected = selected
+        UITableView.appearance().backgroundColor = .clear
+    }
+    
     var body: some View {
         VStack(spacing: 3) {
             Text("Next 7 days")
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                .bold()
-                .font(.system(size: 20))
+                .font(.system(size: 20,weight: .bold))
             List {
                 ForEach(forcasts, id: \.self) { forcast in
                     ForcastListRow(forcast: forcast)
@@ -30,7 +35,7 @@ struct ForcastListView: View {
                 .listRowInsets(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
             }
             .listStyle(.plain)
-            .scrollContentBackground(.hidden)
+            //.scrollContentBackground(.hidden)
         }
     }
 }

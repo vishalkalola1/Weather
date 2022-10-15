@@ -97,7 +97,7 @@ extension Double {
 
     var speed: String {
         let measurementInKelvin = Measurement(value: self, unit: UnitSpeed.kilometersPerHour)
-        return String(format: "%d km/h", measurementInKelvin.value)
+        return String(format: "%.1f km/h", measurementInKelvin.value)
     }
 
     var temprature: String {
