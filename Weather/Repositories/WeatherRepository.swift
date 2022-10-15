@@ -18,14 +18,14 @@ struct WeatherRepository: WeatherRepositoryProtocol {
     
     private var networkProvider: NetworkProviderProtocol
     private let databaseProviderProtocol: DatabaseProviderProtocol
-    private let rechabilityProvidersProtocol: RechabilityProvidersProtocol
+    private let rechabilityProviderProtocol: RechabilityProviderProtocol
     
     init(networkProvider: NetworkProviderProtocol = NetworkProvider(),
          databaseProviderProtocol: DatabaseProviderProtocol = RealmDatabaseProvider(),
-         rechabilityProvidersProtocol: RechabilityProvidersProtocol = RechabilityProviders()) {
+         rechabilityProviderProtocol: RechabilityProviderProtocol = RechabilityProvider()) {
         self.networkProvider = networkProvider
         self.databaseProviderProtocol = databaseProviderProtocol
-        self.rechabilityProvidersProtocol = rechabilityProvidersProtocol
+        self.rechabilityProviderProtocol = rechabilityProviderProtocol
     }
     
     func getWeatherReport(by city: String, completion: @escaping WeatherResultHandler) {
@@ -37,7 +37,7 @@ struct WeatherRepository: WeatherRepositoryProtocol {
 private extension WeatherRepository {
     func getWeatherReport(service: NetworkService, completion: @escaping WeatherResultHandler) {
         let report = getWeatherReport()
-        if rechabilityProvidersProtocol.checkInternetAvailabel() && report == nil {
+        if rechabilityProviderProtocol.checkInternetAvailabel() && report == nil {
             networkProvider.request(dataType: Weathers.self, service: service, onQueue: .main) { results in
                 do {
                     let result = try results.get()

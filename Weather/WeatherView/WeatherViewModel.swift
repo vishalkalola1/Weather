@@ -15,8 +15,18 @@ protocol WeatherViewModelProtocol: ObservableObject {
 
 final class WeatherViewModel: WeatherViewModelProtocol {
     
-    @Published var weatherReport: WeatherReport? = nil
+    @Published var weatherReport: WeatherReport? = nil {
+        didSet {
+            dailyForcast = weatherReport?.forcasts.first?.values
+        }
+    }
     @Published var error: Error?
+    @Published var dailyForcast: [DateList]? = nil {
+        didSet {
+            selectedForcast = dailyForcast?.first
+        }
+    }
+    @Published var selectedForcast: DateList?
     
     private let weatherRepository: WeatherRepositoryProtocol
     private let weatherReportFactoryProtocol: WeatherReportFactoryProtocol

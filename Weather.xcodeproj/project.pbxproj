@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C932B70828F8842A00743BFA /* RealmDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932B70728F8842A00743BFA /* RealmDatabaseManager.swift */; };
+		C932B70828F8842A00743BFA /* RealmDatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932B70728F8842A00743BFA /* RealmDatabaseProvider.swift */; };
 		C932B71128F8905900743BFA /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = C932B71028F8905900743BFA /* Realm */; };
 		C932B71328F8905900743BFA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C932B71228F8905900743BFA /* RealmSwift */; };
 		C940454528FA019E001A9BC1 /* WeatherReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C940454428FA019E001A9BC1 /* WeatherReport.swift */; };
@@ -24,13 +24,20 @@
 		C95878D028F5F99700828983 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95878CC28F5F99700828983 /* ImageView.swift */; };
 		C95878D128F5F99700828983 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95878CE28F5F99700828983 /* View+Extensions.swift */; };
 		C95878D428F5F9D800828983 /* NetworkProvider in Frameworks */ = {isa = PBXBuildFile; productRef = C95878D328F5F9D800828983 /* NetworkProvider */; };
+		C9C30A4228FB1277005921EB /* DailyForcastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C30A4128FB1277005921EB /* DailyForcastView.swift */; };
+		C9C30A4428FB12DD005921EB /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C30A4328FB12DD005921EB /* WeatherInfo.swift */; };
+		C9C30A4628FB1315005921EB /* RotationalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C30A4528FB1315005921EB /* RotationalView.swift */; };
+		C9C30A4828FB134A005921EB /* ForcastListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C30A4728FB134A005921EB /* ForcastListView.swift */; };
+		C9C30A4A28FB13F5005921EB /* HourlyForcastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C30A4928FB13F5005921EB /* HourlyForcastView.swift */; };
+		C9C30A4C28FB1C21005921EB /* DatabaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C30A4B28FB1C21005921EB /* DatabaseError.swift */; };
+		C9C30A4E28FB1C45005921EB /* ReportProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C30A4D28FB1C45005921EB /* ReportProviders.swift */; };
 		C9E7807628F8C456007E97F8 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = C9E7807528F8C456007E97F8 /* Reachability */; };
-		C9E7807828F8C4AF007E97F8 /* RechabilityProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7807728F8C4AF007E97F8 /* RechabilityProviders.swift */; };
+		C9E7807828F8C4AF007E97F8 /* RechabilityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7807728F8C4AF007E97F8 /* RechabilityProvider.swift */; };
 		C9E7807A28F8CC9A007E97F8 /* Realm+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7807928F8CC9A007E97F8 /* Realm+Extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C932B70728F8842A00743BFA /* RealmDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseManager.swift; sourceTree = "<group>"; };
+		C932B70728F8842A00743BFA /* RealmDatabaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseProvider.swift; sourceTree = "<group>"; };
 		C940454428FA019E001A9BC1 /* WeatherReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherReport.swift; sourceTree = "<group>"; };
 		C95878AA28F5F4A900828983 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95878AD28F5F4A900828983 /* WeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApp.swift; sourceTree = "<group>"; };
@@ -45,7 +52,14 @@
 		C95878CB28F5F99700828983 /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		C95878CC28F5F99700828983 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		C95878CE28F5F99700828983 /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
-		C9E7807728F8C4AF007E97F8 /* RechabilityProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechabilityProviders.swift; sourceTree = "<group>"; };
+		C9C30A4128FB1277005921EB /* DailyForcastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForcastView.swift; sourceTree = "<group>"; };
+		C9C30A4328FB12DD005921EB /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
+		C9C30A4528FB1315005921EB /* RotationalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationalView.swift; sourceTree = "<group>"; };
+		C9C30A4728FB134A005921EB /* ForcastListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForcastListView.swift; sourceTree = "<group>"; };
+		C9C30A4928FB13F5005921EB /* HourlyForcastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForcastView.swift; sourceTree = "<group>"; };
+		C9C30A4B28FB1C21005921EB /* DatabaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseError.swift; sourceTree = "<group>"; };
+		C9C30A4D28FB1C45005921EB /* ReportProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProviders.swift; sourceTree = "<group>"; };
+		C9E7807728F8C4AF007E97F8 /* RechabilityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechabilityProvider.swift; sourceTree = "<group>"; };
 		C9E7807928F8CC9A007E97F8 /* Realm+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+Extentions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,8 +81,9 @@
 		C932B70628F8841700743BFA /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				C932B70728F8842A00743BFA /* RealmDatabaseManager.swift */,
-				C9E7807728F8C4AF007E97F8 /* RechabilityProviders.swift */,
+				C932B70728F8842A00743BFA /* RealmDatabaseProvider.swift */,
+				C9E7807728F8C4AF007E97F8 /* RechabilityProvider.swift */,
+				C9C30A4D28FB1C45005921EB /* ReportProviders.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -117,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				C95878AF28F5F4A900828983 /* WeatherView.swift */,
+				C9C30A4028FB1256005921EB /* SubViews */,
 				C95878BC28F5F94000828983 /* WeatherViewModel.swift */,
 			);
 			path = WeatherView;
@@ -127,6 +143,7 @@
 			children = (
 				C940454428FA019E001A9BC1 /* WeatherReport.swift */,
 				C95878BF28F5F96A00828983 /* Weathers.swift */,
+				C9C30A4B28FB1C21005921EB /* DatabaseError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -162,6 +179,7 @@
 			children = (
 				C95878CB28F5F99700828983 /* Navigation.swift */,
 				C95878CC28F5F99700828983 /* ImageView.swift */,
+				C9C30A4528FB1315005921EB /* RotationalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +191,17 @@
 				C9E7807928F8CC9A007E97F8 /* Realm+Extentions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C9C30A4028FB1256005921EB /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				C9C30A4128FB1277005921EB /* DailyForcastView.swift */,
+				C9C30A4328FB12DD005921EB /* WeatherInfo.swift */,
+				C9C30A4728FB134A005921EB /* ForcastListView.swift */,
+				C9C30A4928FB13F5005921EB /* HourlyForcastView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,19 +286,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				C940454528FA019E001A9BC1 /* WeatherReport.swift in Sources */,
+				C9C30A4A28FB13F5005921EB /* HourlyForcastView.swift in Sources */,
+				C9C30A4228FB1277005921EB /* DailyForcastView.swift in Sources */,
 				C95878C028F5F96A00828983 /* Weathers.swift in Sources */,
 				C95878B028F5F4A900828983 /* WeatherView.swift in Sources */,
 				C95878C528F5F98500828983 /* CommonServices.swift in Sources */,
-				C9E7807828F8C4AF007E97F8 /* RechabilityProviders.swift in Sources */,
+				C9C30A4828FB134A005921EB /* ForcastListView.swift in Sources */,
+				C9E7807828F8C4AF007E97F8 /* RechabilityProvider.swift in Sources */,
 				C95878CF28F5F99700828983 /* Navigation.swift in Sources */,
+				C9C30A4C28FB1C21005921EB /* DatabaseError.swift in Sources */,
 				C95878C428F5F98500828983 /* WeatherService.swift in Sources */,
-				C932B70828F8842A00743BFA /* RealmDatabaseManager.swift in Sources */,
+				C9C30A4428FB12DD005921EB /* WeatherInfo.swift in Sources */,
+				C932B70828F8842A00743BFA /* RealmDatabaseProvider.swift in Sources */,
 				C9E7807A28F8CC9A007E97F8 /* Realm+Extentions.swift in Sources */,
+				C9C30A4E28FB1C45005921EB /* ReportProviders.swift in Sources */,
 				C95878BD28F5F94000828983 /* WeatherViewModel.swift in Sources */,
 				C95878D028F5F99700828983 /* ImageView.swift in Sources */,
 				C95878AE28F5F4A900828983 /* WeatherApp.swift in Sources */,
 				C95878D128F5F99700828983 /* View+Extensions.swift in Sources */,
 				C95878C828F5F98E00828983 /* WeatherRepository.swift in Sources */,
+				C9C30A4628FB1315005921EB /* RotationalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,8 +439,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -431,8 +467,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

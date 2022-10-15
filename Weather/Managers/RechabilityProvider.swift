@@ -8,11 +8,11 @@
 import Foundation
 import Reachability
 
-protocol RechabilityProvidersProtocol: AnyObject {
+protocol RechabilityProviderProtocol: AnyObject {
     func checkInternetAvailabel() -> Bool
 }
 
-class RechabilityProviders: RechabilityProvidersProtocol {
+class RechabilityProvider: RechabilityProviderProtocol {
     
     private let reachability = try! Reachability()
     

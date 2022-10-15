@@ -68,8 +68,41 @@ class DateList: Object, Codable {
         case dt = "dt_txt"
     }
     
-    var key: String {
-        dt?.components(separatedBy: " ").first ?? ""
+    var weatherInfo: Weather? {
+        weather.first
+    }
+    
+    var startDay: Date {
+        guard let date = date else { return Date() }
+        let calendar = Calendar.current
+        return calendar.startOfDay(for: date)
+    }
+    
+    var date: Date? {
+        guard let timestamp = timestamp else { return nil }
+        return Date(timeIntervalSince1970: TimeInterval(timestamp))
+    }
+}
+
+extension Int {
+    var percentage: String {
+        String(format: "%d %%", self)
+    }
+    
+    var toString: String {
+        String(self)
+    }
+}
+extension Double {
+
+    var speed: String {
+        let measurementInKelvin = Measurement(value: self, unit: UnitSpeed.kilometersPerHour)
+        return String(format: "%d km/h", measurementInKelvin.value)
+    }
+
+    var temprature: String {
+        let measurementInKelvin = Measurement(value: self, unit: UnitTemperature.kelvin)
+        return String(format: "%.1f\u{00B0}", measurementInKelvin.converted(to: .celsius).value)
     }
 }
 
@@ -114,6 +147,11 @@ class Weather: Object, Codable {
     @Persisted var main: String?
     @Persisted var details: String?
     @Persisted var icon: String?
+    
+    var iconURL: URL? {
+        guard let icon = icon else { return nil }
+        return URL(string: "https://openweathermap.org/img/wn/\(icon)@2x.png")
+    }
     
     enum CodingKeys: String, CodingKey {
         case id, main
