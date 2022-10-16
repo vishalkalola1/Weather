@@ -1,5 +1,13 @@
 # iOS assignment | Weather
 
+## Steps to run application
+1. open terminal
+2. go to project root folder `e.g. cd /.../.../Weather/`
+3. now run command `pod install` to install pods. (Hope you already have cocoapods install in your system or visit cocoapods website to install pods. "https://guides.cocoapods.org/using/getting-started.html")
+4. Now application based on workspace. so open `Weather.xcworkspace` into **Xcode 14.0 and iOS 16 (Read notes)**
+5. Remember when you run application you have good internet to run project. feel free to contact me if still have an error.
+
+
 ### **High-level review of the application**
 - Created file structure as per features and includes files(view, viewmodel, subviews..) into one group
 - Used MVVM architecture with SOLID principles
@@ -24,9 +32,10 @@
 - Network API calling framework if necessory
 - Architecture based on design patterns
 - Error Handling more effective way.
+- Sync logic can be improve best way.
 
-## **This application works online and offline and iphone and ipad. In iphone stackview orientation changed but into ipad you can see the only 1 view. Application only fetch 1 time data when there is an internet connection. after that its always fetch from database. Its a very simple sync logic but we can improve this logic to last fetch time or update time according to functionalities. Also there is no image caching and offline store for image if you open application without internet you can see placeholder image instead of real image.**
+## **This application works online and offline in iphone and ipad. In iphone stackview orientation changed on rotation but into ipad you can see the only 1 view. Application only fetch 1 time data when there is an internet connection. after that its always fetch from database. Its a very simple sync logic but we can improve this logic to last fetch time or update time according to functionalities. Also there is no image caching and offline store for image if you open application without internet you can see placeholder image instead of real image.**
 
-##### **Notes: The project works with Xcode 14.0 and above iOS 16 (Not sure about lower version might some apple api won't work) and the language used is Swift. Must run project into simulator Or device not into swiftUI preview. Also Added Realm database as pods due to Realm's SPM configuration has some issue into test targets.**
+##### **Notes: The project works with Xcode 14.0 and iOS 16 only (Not sure about lower version might some apple api won't work) and the language used is Swift. Must run project into simulator Or device not into swiftUI preview. Also Added Realm database as pods due to Realm's SPM configuration has some issue into test targets.**
 
 ### **Let me know if you still have difficulties to run code. or send me an email at vishalkalola196@gmail.com**
