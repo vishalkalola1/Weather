@@ -255,9 +255,9 @@
 			);
 			mainGroup = C95878A128F5F4A900828983;
 			packageReferences = (
-				C95878D228F5F9D800828983 /* XCRemoteSwiftPackageReference "NetworkProvider" */,
-				C932B70F28F8905900743BFA /* XCRemoteSwiftPackageReference "realm-swift" */,
-				C9E7807428F8C456007E97F8 /* XCRemoteSwiftPackageReference "Reachability" */,
+				C95878D228F5F9D800828983 /* XCRemoteSwiftPackageReference "NetworkProvider.git" */,
+				C932B70F28F8905900743BFA /* XCRemoteSwiftPackageReference "realm-swift.git" */,
+				C9E7807428F8C456007E97F8 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
 			);
 			productRefGroup = C95878AB28F5F4A900828983 /* Products */;
 			projectDirPath = "";
@@ -510,7 +510,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C932B70F28F8905900743BFA /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		C932B70F28F8905900743BFA /* XCRemoteSwiftPackageReference "realm-swift.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -518,7 +518,7 @@
 				kind = branch;
 			};
 		};
-		C95878D228F5F9D800828983 /* XCRemoteSwiftPackageReference "NetworkProvider" */ = {
+		C95878D228F5F9D800828983 /* XCRemoteSwiftPackageReference "NetworkProvider.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vishalkalola1/NetworkProvider.git";
 			requirement = {
@@ -526,7 +526,7 @@
 				kind = branch;
 			};
 		};
-		C9E7807428F8C456007E97F8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+		C9E7807428F8C456007E97F8 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
 			requirement = {
@@ -539,22 +539,22 @@
 /* Begin XCSwiftPackageProductDependency section */
 		C932B71028F8905900743BFA /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C932B70F28F8905900743BFA /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = C932B70F28F8905900743BFA /* XCRemoteSwiftPackageReference "realm-swift.git" */;
 			productName = Realm;
 		};
 		C932B71228F8905900743BFA /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C932B70F28F8905900743BFA /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = C932B70F28F8905900743BFA /* XCRemoteSwiftPackageReference "realm-swift.git" */;
 			productName = RealmSwift;
 		};
 		C95878D328F5F9D800828983 /* NetworkProvider */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C95878D228F5F9D800828983 /* XCRemoteSwiftPackageReference "NetworkProvider" */;
+			package = C95878D228F5F9D800828983 /* XCRemoteSwiftPackageReference "NetworkProvider.git" */;
 			productName = NetworkProvider;
 		};
 		C9E7807528F8C456007E97F8 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C9E7807428F8C456007E97F8 /* XCRemoteSwiftPackageReference "Reachability" */;
+			package = C9E7807428F8C456007E97F8 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
 			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */

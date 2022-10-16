@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "networkprovider",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vishalkalola1/NetworkProvider.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "b2df627a3dbdbbd3166427f800bf195ae14789d0"
+      }
+    },
+    {
+      "identity" : "reachability.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ashleymills/Reachability.swift",
+      "state" : {
+        "branch" : "master",
+        "revision" : "a81b7367f2c46875f29577e03a60c39cdfad0c8d"
+      }
+    }
+  ],
+  "version" : 2
+}
