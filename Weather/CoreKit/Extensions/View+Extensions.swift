@@ -12,7 +12,7 @@ extension View {
     func errorAlert(error: Binding<Error?>) -> some View {
         return alert(isPresented: .constant(error.wrappedValue != nil)) {
             Alert(title: Text("Error"),
-                  message:  Text(error.wrappedValue?.localizedDescription ?? ""))
+                  message:  Text((error.wrappedValue as? LocalizedError)?.errorDescription ?? ""))
         }
     }
 }
