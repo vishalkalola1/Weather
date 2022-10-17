@@ -1,5 +1,5 @@
 //
-//  ForcastListView.swift
+//  ForecastListView.swift
 //  Weather
 //
 //  Created by vishal on 10/15/22.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct ForcastListView: View {
+struct ForecastListView: View {
     
-    let forcasts: [Forcast]
+    let forecasts: [Forecast]
     let selected: ([DateList]) -> Void
     
-    init(forcasts: [Forcast], selected: @escaping ([DateList]) -> Void) {
-        self.forcasts = forcasts
+    init(forecasts: [Forecast], selected: @escaping ([DateList]) -> Void) {
+        self.forecasts = forecasts
         self.selected = selected
     }
     
@@ -23,10 +23,10 @@ struct ForcastListView: View {
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                 .font(.system(size: 20, weight: .bold))
             List {
-                ForEach(forcasts, id: \.self) { forcast in
-                    ForcastListRow(forcast: forcast)
+                ForEach(forecasts, id: \.self) { forecast in
+                    ForecastListRow(forecast: forecast)
                         .onTapGesture {
-                            selected(forcast.values)
+                            selected(forecast.values)
                         }
                 }
                 .listRowBackground(Color.clear)
@@ -40,22 +40,22 @@ struct ForcastListView: View {
 }
 
 
-struct ForcastListRow: View {
+struct ForecastListRow: View {
     
-    let forcast: Forcast
+    let forecast: Forecast
     
     var body: some View {
         HStack(spacing: 20) {
-            Text(forcast.date, style: .date)
+            Text(forecast.date, style: .date)
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                 .font(.system(size: 13))
-            Text(forcast.values.first?.main?.tempMin?.temprature ?? "")
+            Text(forecast.values.first?.main?.tempMin?.temperature ?? "")
                 .bold()
                 .font(.system(size: 13))
-            Text(forcast.values.last?.main?.tempMax?.temprature ?? "")
+            Text(forecast.values.last?.main?.tempMax?.temperature ?? "")
                 .bold()
                 .font(.system(size: 13))
-            ImageView(url: forcast.values.first?.weatherInfo?.iconURL)
+            ImageView(url: forecast.values.first?.weatherInfo?.iconURL)
                 .frame(width: 40, height: 40)
                 .shadow(color: Color.init(uiColor: .cyan).opacity(0.1), radius: 5, x: 0, y: 5)
         }

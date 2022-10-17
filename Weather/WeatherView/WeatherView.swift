@@ -15,14 +15,14 @@ struct WeatherView: View {
         VHStack {
             if viewModel.weatherReport != nil {
                 VStack {
-                    DailyForcastView(selectedForcast: viewModel.selectedForcast, city: viewModel.weatherReport?.city)
-                    WeatherInfo(selectedForcast: viewModel.selectedForcast)
-                    HourlyForcastView(dailyForcast: viewModel.dailyForcast ?? []) { selected in
-                        viewModel.selectedForcast = selected
+                    DailyForecastView(selectedForecast: viewModel.selectedForecast, city: viewModel.weatherReport?.city)
+                    WeatherInfo(selectedForecast: viewModel.selectedForecast)
+                    HourlyForecastView(dailyForecast: viewModel.dailyForecast ?? []) { selected in
+                        viewModel.selectedForecast = selected
                     }
                 }
-                ForcastListView(forcasts: viewModel.weatherReport?.forcasts ?? []) { selected in
-                    viewModel.dailyForcast = selected
+                ForecastListView(forecasts: viewModel.weatherReport?.forecasts ?? []) { selected in
+                    viewModel.dailyForecast = selected
                 }
             } else {
                 ProgressView()

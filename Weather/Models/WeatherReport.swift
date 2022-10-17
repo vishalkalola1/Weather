@@ -9,15 +9,15 @@ import Foundation
 
 struct WeatherReport {
     let city: City
-    let forcasts: [Forcast]
+    let forecasts: [Forecast]
     
-    init(city: City, forcasts: [Forcast]) {
+    init(city: City, forecasts: [Forecast]) {
         self.city = city
-        self.forcasts = forcasts
+        self.forecasts = forecasts
     }
 }
 
-struct Forcast: Hashable {
+struct Forecast: Hashable {
     let date: Date
     let values: [DateList]
 }

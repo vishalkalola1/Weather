@@ -10,8 +10,8 @@ import Combine
 
 protocol WeatherViewModelProtocol: ObservableObject {
     var weatherReport: WeatherReport? { get }
-    var dailyForcast: [DateList]? { get }
-    var selectedForcast: DateList? { get }
+    var dailyForecast: [DateList]? { get }
+    var selectedForecast: DateList? { get }
     var error: Error? { get }
     func fetchWeatherReports(by city: String)
 }
@@ -20,16 +20,16 @@ final class WeatherViewModel: WeatherViewModelProtocol {
     
     @Published var weatherReport: WeatherReport? {
         didSet {
-            dailyForcast = weatherReport?.forcasts.first?.values
+            dailyForecast = weatherReport?.forecasts.first?.values
         }
     }
     @Published var error: Error?
-    @Published var dailyForcast: [DateList]? {
+    @Published var dailyForecast: [DateList]? {
         didSet {
-            selectedForcast = dailyForcast?.first
+            selectedForecast = dailyForecast?.first
         }
     }
-    @Published var selectedForcast: DateList?
+    @Published var selectedForecast: DateList?
     
     private let weatherRepository: WeatherRepositoryProtocol
     private let weatherReportFactoryProtocol: WeatherReportFactoryProtocol
@@ -51,7 +51,7 @@ extension WeatherViewModel {
             do {
                 let results = try results.get()
                 guard let city = results.city else { return }
-                self.weatherReport = self.weatherReportFactoryProtocol.genetateReport(city, dates: Array(results.dates))
+                self.weatherReport = self.weatherReportFactoryProtocol.generateReport(city, dates: Array(results.dates))
             } catch {
                 self.error = error
             }

@@ -9,13 +9,13 @@ import SwiftUI
 
 struct WeatherInfo: View {
     
-    let selectedForcast: DateList?
+    let selectedForecast: DateList?
     
     var body: some View {
         HStack {
-            WeatherInfoRow(image: "cloud", name: "Clouds", value: selectedForcast?.clouds?.all?.percentage ?? "")
-            WeatherInfoRow(image: "humidity", name: "Humidity", value: selectedForcast?.main?.humidity?.percentage ?? "")
-            WeatherInfoRow(image: "wind", name: "Wind", value: selectedForcast?.wind?.speed?.speed ?? "")
+            WeatherInfoRow(image: "cloud", name: "Clouds", value: selectedForecast?.clouds?.all?.percentage ?? "")
+            WeatherInfoRow(image: "humidity", name: "Humidity", value: selectedForecast?.main?.humidity?.percentage ?? "")
+            WeatherInfoRow(image: "wind", name: "Wind", value: selectedForecast?.wind?.speed?.speed ?? "")
         }
     }
 }

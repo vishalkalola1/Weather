@@ -1,5 +1,5 @@
 //
-//  HourlyForcastView.swift
+//  HourlyForecastView.swift
 //  Weather
 //
 //  Created by vishal on 10/15/22.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct HourlyForcastView: View {
+struct HourlyForecastView: View {
     
-    let dailyForcast: [DateList]
+    let dailyForecast: [DateList]
     let selected: (DateList) -> Void
     
     let columns = [
@@ -20,21 +20,20 @@ struct HourlyForcastView: View {
         VStack{
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: columns) {
-                    ForEach(dailyForcast, id: \.self) { hourForcast in
+                    ForEach(dailyForecast, id: \.self) { hourForecast in
                         VStack {
-                            //Spacer().frame(height: 10)
-                            Text(hourForcast.date ?? Date(), style: .time)
+                            Text(hourForecast.date ?? Date(), style: .time)
                                 .font(.system(size: 13))
-                            ImageView(url: hourForcast.weatherInfo?.iconURL)
+                            ImageView(url: hourForecast.weatherInfo?.iconURL)
                                 .frame(width: 40, height: 40)
-                            Text(hourForcast.main?.temp?.temprature ?? "")
+                            Text(hourForecast.main?.temp?.temperature ?? "")
                                 .font(.system(size: 13, weight: .bold))
                         }
                         .padding(10)
                         .background(Color.white.opacity(0.4))
                         .cornerRadius(10)
                         .onTapGesture {
-                            selected(hourForcast)
+                            selected(hourForecast)
                         }
                     }
                 }

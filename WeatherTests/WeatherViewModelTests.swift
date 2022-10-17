@@ -43,12 +43,12 @@ final class WeatherViewModelTests: XCTestCase {
         XCTAssertNotNil(actual)
     }
     
-    func testDailyForcast() {
+    func testDailyForecast() {
         // When
         var actual: [DateList]? = nil
         
         let expectation = self.expectation(description: "waiting validation")
-        let cancellable = viewModel.$dailyForcast.sink(receiveValue: { values in
+        let cancellable = viewModel.$dailyForecast.sink(receiveValue: { values in
             if let value = values {
                 actual = value
                 expectation.fulfill()
@@ -62,12 +62,12 @@ final class WeatherViewModelTests: XCTestCase {
         XCTAssertNotNil(actual)
     }
     
-    func testSelectedForcast() {
+    func testSelectedForecast() {
         // When
         var actual: DateList? = nil
         
         let expectation = self.expectation(description: "waiting validation")
-        let cancellable = viewModel.$selectedForcast.sink(receiveValue: { values in
+        let cancellable = viewModel.$selectedForecast.sink(receiveValue: { values in
             if let value = values {
                 actual = value
                 expectation.fulfill()

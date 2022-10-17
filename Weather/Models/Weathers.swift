@@ -84,28 +84,6 @@ class DateList: Object, Codable {
     }
 }
 
-extension Int {
-    var percentage: String {
-        String(format: "%d %%", self)
-    }
-    
-    var toString: String {
-        String(self)
-    }
-}
-extension Double {
-
-    var speed: String {
-        let measurementInKelvin = Measurement(value: self, unit: UnitSpeed.kilometersPerHour)
-        return String(format: "%.1f km/h", measurementInKelvin.value)
-    }
-
-    var temprature: String {
-        let measurementInKelvin = Measurement(value: self, unit: UnitTemperature.kelvin)
-        return String(format: "%.1f\u{00B0}", measurementInKelvin.converted(to: .celsius).value)
-    }
-}
-
 // MARK: - Clouds
 class Clouds: Object, Codable {
     @Persisted var all: Int?
