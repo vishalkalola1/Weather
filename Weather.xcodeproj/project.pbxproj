@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -118,7 +118,6 @@
 				A2AEEDFE79F370673970D0C0 /* Pods-WeatherTests.debug.xcconfig */,
 				7B764A1DA152E05997DD03EC /* Pods-WeatherTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -338,7 +337,7 @@
 				};
 			};
 			buildConfigurationList = C95878A528F5F4A900828983 /* Build configuration list for PBXProject "Weather" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -347,8 +346,8 @@
 			);
 			mainGroup = C95878A128F5F4A900828983;
 			packageReferences = (
-				C95878D228F5F9D800828983 /* XCRemoteSwiftPackageReference "NetworkProvider.git" */,
-				C9E7807428F8C456007E97F8 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
+				C95878D228F5F9D800828983 /* XCRemoteSwiftPackageReference "NetworkProvider" */,
+				C9E7807428F8C456007E97F8 /* XCRemoteSwiftPackageReference "Reachability" */,
 			);
 			productRefGroup = C95878AB28F5F4A900828983 /* Products */;
 			projectDirPath = "";
@@ -762,7 +761,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C95878D228F5F9D800828983 /* XCRemoteSwiftPackageReference "NetworkProvider.git" */ = {
+		C95878D228F5F9D800828983 /* XCRemoteSwiftPackageReference "NetworkProvider" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vishalkalola1/NetworkProvider.git";
 			requirement = {
@@ -770,7 +769,7 @@
 				kind = branch;
 			};
 		};
-		C9E7807428F8C456007E97F8 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
+		C9E7807428F8C456007E97F8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
 			requirement = {
@@ -783,12 +782,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		C95878D328F5F9D800828983 /* NetworkProvider */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C95878D228F5F9D800828983 /* XCRemoteSwiftPackageReference "NetworkProvider.git" */;
+			package = C95878D228F5F9D800828983 /* XCRemoteSwiftPackageReference "NetworkProvider" */;
 			productName = NetworkProvider;
 		};
 		C9E7807528F8C456007E97F8 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C9E7807428F8C456007E97F8 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
+			package = C9E7807428F8C456007E97F8 /* XCRemoteSwiftPackageReference "Reachability" */;
 			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */
